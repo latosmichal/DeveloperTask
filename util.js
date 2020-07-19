@@ -65,7 +65,8 @@ function sumDicts(dict1, dict2) {
 
     for (const key in dict2) {
         if (isNaN(dict2[key])) { throw new Error('Wrong expression, NaN in dictonary') }
-        if (!(key in dict1) && key != 'undefined') {
+        if (key == 'undefined' || key == '-') { throw new Error('Wrong exponent');}
+        else if (!(key in dict1)) {
             combinedDicts[key] = dict2[key];
         }
     }
