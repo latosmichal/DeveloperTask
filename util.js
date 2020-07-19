@@ -37,13 +37,13 @@ function evaluateExpression(_expression) {
             insertValueToDict(dict, baseAttributes[1], negativePositiveMultiplier);
         }
         else if (baseAttributes[0] != '' && baseAttributes[1] == '') {
-            insertValueToDict(dict, '1', parseFloat(baseAttributes[0]));
+            insertValueToDict(dict, '1', parseFloat(baseAttributes[0])*negativePositiveMultiplier);
         }
         else {
             if (baseAttributes.length == 1) {
                 insertValueToDict(dict, '0', parseFloat(baseAttributes) * negativePositiveMultiplier);
             } else {
-                insertValueToDict(dict, baseAttributes[1], parseFloat(baseAttributes[0]))
+                insertValueToDict(dict, baseAttributes[1], parseFloat(baseAttributes[0]) * negativePositiveMultiplier)
             }
         }
     }
